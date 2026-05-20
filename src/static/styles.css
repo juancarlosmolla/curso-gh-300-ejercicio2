@@ -16,12 +16,43 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.user-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-status {
+  font-size: 13px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.user-button {
+  background-color: #fff;
+  color: #1a237e;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 14px;
+  min-width: 44px;
+}
+
+.user-button.logged-in {
+  background-color: #fdd835;
+  color: #212121;
 }
 
 header h1 {
@@ -134,6 +165,15 @@ section h3 {
   margin-bottom: 15px;
 }
 
+.info-note {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e8f0fe;
+  border: 1px solid #c5d7fb;
+  color: #1f3d7a;
+}
+
 .form-group label {
   display: block;
   margin-bottom: 5px;
@@ -192,9 +232,49 @@ button:hover {
   display: none;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.secondary-button {
+  background-color: #9e9e9e;
+}
+
+.secondary-button:hover {
+  background-color: #757575;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .user-controls {
+    position: static;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 }
